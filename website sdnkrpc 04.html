@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDN Karangpucung 04</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+    header {
+      background: #0275d8;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #025aa5;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .card {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #0275d8;
+      color: white;
+    }
+    #printBtn {
+      background: #0275d8;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      float: right;
+    }
+    @media print {
+      #printBtn, #searchInput, nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SD NEGERI KARANGPUCUNG 04</h1>
+  <p>Kabupaten Cilacap</p>
+</header>
+
+<nav>
+  <a href="#profil">Profil</a>
+  <a href="#galeri">Galeri Sekolah</a>
+  <a href="#video">Video Kegiatan</a>
+  <a href="#pendidik">Tenaga Pendidik</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<section id="profil">
+  <div class="card">
+    <h2>Profil Sekolah</h2>
+    <p>SD Negeri Karangpucung 04 adalah sekolah dasar negeri yang terletak di Kecamatan Karangpucung, Kabupaten Cilacap. Sekolah ini berkomitmen untuk mencetak generasi yang cerdas, berkarakter, dan berakhlak mulia.</p>
+  </div>
+</section>
+
+<section id="galeri">
+  <div class="card">
+    <h2>Galeri Sekolah</h2>
+    <p>Dokumentasi kegiatan siswa dan guru SD Negeri Karangpucung 04.</p>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/300x200?text=Upacara" alt="Upacara">
+      <img src="https://via.placeholder.com/300x200?text=Olahraga" alt="Olahraga">
+      <img src="https://via.placeholder.com/300x200?text=Pramuka" alt="Pramuka">
+      <img src="https://via.placeholder.com/300x200?text=Hari+Guru" alt="Hari Guru">
+      <img src="https://via.placeholder.com/300x200?text=Kelas" alt="Kelas">
+      <img src="https://via.placeholder.com/300x200?text=Gotong+Royong" alt="Gotong Royong">
+    </div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="card">
+    <h2>Video Kegiatan</h2>
+    <p>Berikut adalah beberapa dokumentasi video kegiatan siswa:</p>
+    <div class="gallery-grid">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/kXYiU_JCYtU" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/C0DPdy98e4c" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="pendidik">
+  <div class="card">
+    <h2>Data Tenaga Pendidik</h2>
+    <input type="text" id="searchInput" placeholder="Cari nama atau mata pelajaran..." onkeyup="filterTable()">
+    <button id="printBtn" onclick="window.print()">Cetak PDF</button>
+    <table id="guruTable">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIP</th>
+          <th>Jabatan</th>
+          <th>Mata Pelajaran</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ibu Siti Rahmawati</td>
+          <td>19781225 200501 2 001</td>
+          <td>Kepala Sekolah</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Bapak Ahmad Zainuri</td>
+          <td>19810415 200604 1 003</td>
+          <td>Guru Kelas</td>
+          <td>Matematika</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Ibu Dwi Astutik</td>
+          <td>19860610 200902 2 004</td>
+          <td>Guru Kelas</td>
+          <td>Bahasa Indonesia</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Bapak Suryanto</td>
+          <td>19750501 200012 1 002</td>
+          <td>Penjaga Sekolah</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="kontak">
+  <div class="card">
+    <h2>Kontak</h2>
+    <p><strong>Alamat:</strong> Jl. Sunan Kalijaga, Karangpucung, Kode Pos 53255, Kabupaten Cilacap</p>
+    <p><strong>Email:</strong> sdkarangpucung04@gmail.com</p>
+    <p><strong>Telepon:</strong> 0812-3456-7890</p>
+  </div>
+</section>
+
+<script>
+  function filterTable() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const rows = document.querySelectorAll("#guruTable tbody tr");
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = text.includes(input) ? "" : "none";
+    });
+  }
+</script>
+
+</body>
+</html>
